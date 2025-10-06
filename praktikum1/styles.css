@@ -1,0 +1,70 @@
+* {
+    /* the quintessential responsive property, why this is not the default? */
+    /* With this, the real width and height should be the real width and height */
+    box-sizing: border-box;
+}
+
+body {
+    /* A minimum of 100vh (viewport height), AKA take all available space */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.container {
+    /* flex to make it grow big, as big as its parent, the great body */
+    display: flex;
+    flex: 1;
+    background-color: #f2f2f2;
+}
+
+.sidebar {
+    background-color: #d3d3d3;
+    /* it will only take 20% of the space provided, without flex property */
+    /* this also can use flex: 1 vs content's flex: 5, but math hurts */
+    width: 20%;
+    padding: 20px;
+}
+
+.sidebar a {
+    display: block;
+    color: blue;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    /* let it scroll... let it scroll... can't hold it back anymore */
+    /* no overflow auto and the footer will be a floater instead */
+    overflow: auto;
+}
+
+.content h3 {
+    margin-top: 0;
+}
+
+.footer {
+    background-color: #666;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    /* make it relative to the content of the webpages, just in case */
+    position: relative;
+}
